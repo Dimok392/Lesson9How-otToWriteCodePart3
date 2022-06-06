@@ -10,21 +10,41 @@ Console.WriteLine("Введите конечное число");
 int n = int.Parse(Console.ReadLine());
 void PrintNumbers(int m, int n)
 {
-    int saveM = 0;
     if (m == 0)
         return;
-    if (m > n)
+    if (m > n )
     {
-        saveM = m - 1;
+        PrintNumbers(m - 1, n);
     }
-    if (m < n)
+    if (m < n )
     {
-        saveM = m + 1;
+        PrintNumbers(m + 1, n);
     }
-    Console.Write(m + " ");
-    PrintNumbers(saveM, n);
+       Console.Write(m + " ");
 }
-PrintNumbers(m, n);
+PrintNumbers(n, m);
+
+// Console.WriteLine(" Введите первое число");
+// int m = int.Parse(Console.ReadLine());
+// Console.WriteLine("Введите конечное число");
+// int n = int.Parse(Console.ReadLine());
+// void PrintNumbers(int m, int n)
+// {
+//     int saveM = 0;
+//     if (m == 0)
+//         return;
+//     if (m > n)
+//     {
+//         saveM = m - 1;
+//     }
+//     if (m < n)
+//     {
+//         saveM = m + 1;
+//     }
+//     Console.Write(m + " ");
+//     PrintNumbers(saveM, n);
+// }
+// PrintNumbers(m, n);
 
 
 
