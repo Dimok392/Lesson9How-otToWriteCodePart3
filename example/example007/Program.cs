@@ -6,25 +6,19 @@ Console.WriteLine(" Введите первое число");
 int m = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите конечное число");
 int n = int.Parse(Console.ReadLine());
+    if (m>n)
+{
+    int save;
+    save=m;
+    m=n;
+    n=save;
+}
 int PrintNumbers(int m, int n)
 {
-    int summ = 0;
-    if (m == 0)
-        return ;
-    if (m > n)
-    {
-       int summa=summa+ PrintNumbers(m - 1, n);
-       return summa;
-    }
-    if (m < n)
-    {
-        int summa=summa+ PrintNumbers(m + 1, n);
-        return summa;
-    }
+    if (m > n ) return 0;
     Console.Write(m + " ");
-    Console.WriteLine(summa);
-
-
+    return m+ PrintNumbers(m + 1, n);
 }
-int summ = PrintNumbers(n, m);
+int summ = PrintNumbers(m, n);
+Console.WriteLine();
 Console.WriteLine(summ);
